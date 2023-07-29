@@ -67,7 +67,8 @@ const signUpFn = (ev) => {
   }
 
   if (password.value !== confirmPassword.value) {
-    alert("please enter same password");
+    errorSection.innerText = "Error: please enter same password";
+    // alert("please enter same password");
     return;
   }
 
