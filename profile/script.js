@@ -6,8 +6,9 @@ const logoutBtn = document.getElementById("logout-btn");
 
 // ensuring users cannot manually navigate to the "Profile" page unless they are logged in
 document.addEventListener("DOMContentLoaded", function () {
+  const token = localStorage.getItem("userToken");
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  if (isLoggedIn !== "true") {
+  if (isLoggedIn !== "true" || !token) {
     // alert("unauthorized access! redirect to login page."); //add toster
     window.location.href = "../index.html";
   }
@@ -27,7 +28,9 @@ const contentLoad = () => {
 
 const logoutBtnHandler = () => {
   localStorage.removeItem("users");
+  localStorage.removeItem("userToken");
   localStorage.setItem("isLoggedIn", false);
+
   window.location.href = "../index.html";
 };
 

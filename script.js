@@ -7,33 +7,35 @@ const errorSection = document.getElementById("error-section");
 
 // ensuring users cannot manually navigate to the "index" page unless they click logout
 document.addEventListener("DOMContentLoaded", function () {
+  const token = localStorage.getItem("userToken");
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  if (isLoggedIn === "true") {
+  if (isLoggedIn === "true" || token) {
     // alert("unauthorized access! redirect to login page."); //add toster
     window.location.href = "./profile";
     return;
   }
 });
 
-const clearingFields = () => {
+const clearingFields = (token) => {
   alert("Successfully registered!");
   userName.value = "";
   email.value = "";
   password.value = "";
   confirmPassword.value = "";
   localStorage.setItem("isLoggedIn", true);
+  localStorage.setItem("userToken", JSON.stringify(token));
   window.location.href = "./profile";
 };
 
 // setting up local storage
 const setLocalStorage = (userData) => {
   let users = JSON.parse(localStorage.getItem("users"));
-  console.log(typeof users);
+  // console.log(typeof users);
   if (!users) {
     users = [];
     users.push(userData);
     localStorage.setItem("users", JSON.stringify(users));
-    clearingFields();
+    clearingFields(userData.token);
     return;
   }
 
@@ -46,9 +48,11 @@ const setLocalStorage = (userData) => {
   }
   users.push(userData);
   localStorage.setItem("users", JSON.stringify(users));
-  clearingFields();
+  clearingFields(userData.token);
 };
 
+
+// fetching and validating user input
 const signUpFn = (ev) => {
   ev.preventDefault();
   if (
