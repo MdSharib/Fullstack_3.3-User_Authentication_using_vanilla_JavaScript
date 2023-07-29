@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Didact Gothic', sans-serif;
+font-family: 'Merriweather', serif;
+}
+
+body{
+    background-color: rgb(233, 255, 255);
+}
+
+/* profile styling */
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-page{
+    background-color: white;
+    width: 40%;
+    padding: 18px;
+}
+#profile-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+}
+
+#profile{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+
+#avatar{
+    width: 50%;
+}
+
+#avatar img{
+    width: 100%;
+}
+
+
+.logout-section{
+    width: 75%;
+}
+
+
+
+.logout-section button{
+    background-color: #564FF2;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 42px;
+    border-radius: 6px;
+    cursor: pointer;
+}
