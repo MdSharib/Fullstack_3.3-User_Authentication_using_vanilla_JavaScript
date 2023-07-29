@@ -23,6 +23,7 @@ main{
     background-color: white;
     width: 40%;
     padding: 18px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #signup-content{
     display: flex;
@@ -74,4 +75,32 @@ form{
     text-align: center;
     color: #625BF7;
     
+}
+
+
+
+/* Responsive layout for medium-sized screens */
+@media only screen and (max-width: 768px) {
+    #sign-up {
+        background-color: white;
+        width: 80%;
+        padding: 18px;
+    }
+    #signup-content .signup-heading {
+        font-weight: 500;
+        font-size: 115%;
+    }
+}
+
+/* Responsive layout for smaller screens (smartphones) */
+@media only screen and (max-width: 480px) {
+    #sign-up {
+        background-color: white;
+        width: 80%;
+        padding: 18px;
+    }
+    #signup-content .signup-heading {
+        font-weight: 500;
+        font-size: 115%;
+    }
 }

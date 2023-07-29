@@ -23,6 +23,7 @@ main{
     background-color: white;
     width: 40%;
     padding: 18px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #profile-content{
     display: flex;
@@ -30,6 +31,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 22px;
+    
 }
 
 #profile{
