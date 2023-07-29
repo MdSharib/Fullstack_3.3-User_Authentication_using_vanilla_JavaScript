@@ -5,34 +5,27 @@ const confirmPassword = document.getElementById("cpassword");
 const continueBtn = document.getElementById("continue-btn");
 const errorSection = document.getElementById("error-section");
 
-
 // ensuring users cannot manually navigate to the "index" page unless they click logout
 document.addEventListener("DOMContentLoaded", function () {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   if (isLoggedIn === "true") {
-      // alert("unauthorized access! redirect to login page."); //add toster
+    // alert("unauthorized access! redirect to login page."); //add toster
     window.location.href = "./profile";
     return;
   }
 });
 
-
-
-
-
 const clearingFields = () => {
-    alert("Successfully registered!");
-    userName.value = "";
-    email.value = "";
-    password.value = "";
-    confirmPassword.value = "";
-    localStorage.setItem("isLoggedIn", true);
-    window.location.href = "./profile";
-}
+  alert("Successfully registered!");
+  userName.value = "";
+  email.value = "";
+  password.value = "";
+  confirmPassword.value = "";
+  localStorage.setItem("isLoggedIn", true);
+  window.location.href = "./profile";
+};
 
-
-
-// setting up local storage 
+// setting up local storage
 const setLocalStorage = (userData) => {
   let users = JSON.parse(localStorage.getItem("users"));
   console.log(typeof users);
@@ -40,7 +33,7 @@ const setLocalStorage = (userData) => {
     users = [];
     users.push(userData);
     localStorage.setItem("users", JSON.stringify(users));
-   clearingFields()
+    clearingFields();
     return;
   }
 

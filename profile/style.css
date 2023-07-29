@@ -7,7 +7,11 @@ font-family: 'Merriweather', serif;
 }
 
 body{
-    background-color: rgb(233, 255, 255);
+    background-color: #F8FAFC;
+    background-image: url("../resources/profile\ Background\ Pattern.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
 }
 
 /* profile styling */
